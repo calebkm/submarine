@@ -70,6 +70,13 @@ end
 
 *config.substitutions*: You can predefine global substitution defaults in the configuration. Maybe you'd always like to match `[[time]]` to the current time - `config.substitutions = {date: Time.now}`.
 
+#### Reloading Defaults ###
+If you'd like to reload the `Submarine` defaults at any point during runtime you can call `reload` on the configuration object:
+
+```ruby
+Submarine.config.reload! => reload defaults
+```
+
 ## Compatibility ##
 
 This gem was created for Ruby 2. It's very likely it could work with older versions. You'll have to test to determine compatibility!
