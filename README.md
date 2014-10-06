@@ -65,7 +65,10 @@ Submarine.configure do |config|
   config.substitutions = {}     # Optional global default substitutions 
 end
 ```
-*config.substitutions*: You an predefine defaults in the configuration. Maybe you'd always like to match `[[time]]` to the current time - `config.substitutions = {date: Time.now}`.
+
+### Default Substitutions ###
+
+*config.substitutions*: You can predefine global substitution defaults in the configuration. Maybe you'd always like to match `[[time]]` to the current time - `config.substitutions = {date: Time.now}`.
 
 ## Compatibility ##
 
