@@ -1,6 +1,6 @@
 # Submarine #
 
-Deep sea string substitution. [Official Website][http://www.submarine-gem.org]
+Deep sea string substitution. [Official Website](http://www.submarine-gem.org)
 
 ## About ##
 
