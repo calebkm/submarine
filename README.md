@@ -1,15 +1,15 @@
 # Submarine #
 
-Deep sea string substitution.
+Deep sea string substitution. [Official Website][http://www.submarine-gem.org]
 
 ## About ##
 
 `Submarine` is a lightweight string formatter built in [Ruby](https://www.ruby-lang.org/en/). It allows the use of placeholder values inside of a string, which can then be formatted during runtime into whatever else you like. It's best summed up with a quick example:
 
 ```ruby
-  string = "Hello, my name is [[name]]."
-  formatted_string = Submarine.new(text: string, name: 'Joe').format!
-  => "Hello, my name is Joe."
+string = "Hello, my name is [[name]]."
+formatted_string = Submarine.new(text: string, name: 'Joe').format!
+=> "Hello, my name is Joe."
 ```
 
 Not completely unlike [Handlebars](https://github.com/wycats/handlebars.js/) or [Mustache](https://github.com/mustache/mustache.github.com) or [RedCloth](https://github.com/jgarber/redcloth), `Submarine` takes a string and formats it using predefined key value pairs.
@@ -21,14 +21,14 @@ Although there are many use cases, maybe you have a Ruby web app with some admin
 Maybe the message the admin enters looks like:
 
 ```ruby
-  greeting = "Good morning [[name]], welcome back to your dashboard!"
+greeting = "Good morning [[name]], welcome back to your dashboard!"
 ```
 
 This string can now be run through `Submarine` to turn `[[name]]` into something useful:
 
 ```ruby
-  formatted_greeting = Submarine.new(text: greeting, name: user.first_name).format!
-  => "Good morning Joe, welcome back to your dashboard!"
+formatted_greeting = Submarine.new(text: greeting, name: user.first_name).format!
+=> "Good morning Joe, welcome back to your dashboard!"
 ```
 
 ## Install ##
