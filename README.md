@@ -76,7 +76,7 @@ end
 If you'd like to reload the `Submarine` defaults at any point during runtime you can call `reload` on the configuration object:
 
 ```ruby
-Submarine.config.reload! => reload defaults
+Submarine.config.reload!
 ```
 
 ## Compatibility ##
