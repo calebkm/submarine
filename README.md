@@ -1,6 +1,6 @@
 # Submarine #
 
-Deep sea string substitution. [Official Website](http://www.submarine-gem.org)
+Deep sea string substitution. [Official Website](http://www.submarine-gem.org).
 
 ## About ##
 
@@ -20,13 +20,15 @@ Although there are many use cases, maybe you have a Ruby web app with some admin
 
 Maybe the message the admin enters looks like:
 
-```ruby
-greeting = "Good morning [[name]], welcome back to your dashboard!"
+```html
+// Inside a text field input
+Good morning [[name]], welcome back to your dashboard!
 ```
 
 This string can now be run through `Submarine` to turn `[[name]]` into something useful:
 
 ```ruby
+greeting = "Good morning [[name]], welcome back to your dashboard!"
 formatted_greeting = Submarine.new(text: greeting, name: user.first_name).format!
 => "Good morning Joe, welcome back to your dashboard!"
 ```
