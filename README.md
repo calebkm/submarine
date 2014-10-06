@@ -59,15 +59,13 @@ sub.format! => "Hello Joe, you have 7 days until your trial expires."
 ```ruby
 # maybe in an initialization file like config/initializers/submarine.rb
 Submarine.configure do |config|
-  config.format_key = :text
-  config.left_delimeter = '[['
-  config.right_delimeter = ']]'
-  config.substitutions = {}
+  config.format_key = :text     # Key representing the string to be formatted
+  config.left_delimeter = '[['  # The left-hand side matcher
+  config.right_delimeter = ']]' # The right-hand side matcher
+  config.substitutions = {}     # Optional global default substitutions 
 end
 ```
-
-The above are the defaults, where:
-`format_key` is the key representing the string you'd like formatted, `left_delimeter` is the left-hand side variable match, `right_delimeter` is the right-hand side variable match and `substitutions` is an optional hash containing predefined global replacements, perhaps `{date: Time.now}`.
+*config.substitutions*: You an predefine defaults in the configuration. Maybe you'd always like to match `[[time]]` to the current time - `config.substitutions = {date: Time.now}`.
 
 ## Compatibility ##
 
