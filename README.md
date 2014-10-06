@@ -45,9 +45,9 @@ gem 'submarine'
 As shown above, `Submarine` takes a string and formats anything surrounded in double square brackets, like `[[name]]`. Maybe you're formatting an email:
 
 ```ruby
-  email_body = "Hello [[name]]. You have [[days]] until your trial expires."
-  sub = Submarine.new(text: email_body, days: user.account.days_until_expires)
-  sub.format! => "Hello Joe, you have 7 days until your trial expires."
+email_body = "Hello [[name]]. You have [[days]] until your trial expires."
+sub = Submarine.new(text: email_body, days: user.account.days_until_expires)
+sub.format! => "Hello Joe, you have 7 days until your trial expires."
 ```
 
 `Submarine` only requires that you provide it a string and the corresponding replacement values.
@@ -57,25 +57,21 @@ As shown above, `Submarine` takes a string and formats anything surrounded in do
 `Submarine` is configurable. Maybe you're not particularly fond of double square brackets and you'd prefer to have your variables surrounded with curly brackets, like `{{name}}`. Or maybe you prefer something more esoteric like `<^name^>`. Although `Submarine` defaults to square brackets, you're free to override them:
 
 ```ruby
-  # config/initializers/submarine.rb
-  Submarine.configure do |config|
-    config.format_key = :text
-    config.left_delimeter = '[['
-    config.right_delimeter = ']]'
-    config.substitutions = {}
-  end
+# maybe in an initialization file like config/initializers/submarine.rb
+Submarine.configure do |config|
+  config.format_key = :text
+  config.left_delimeter = '[['
+  config.right_delimeter = ']]'
+  config.substitutions = {}
+end
 ```
 
 The above are the defaults, where:
-`format_key` is the key that pertains to the string you'd like to be formatted.
-`left_delimeter` is the left-hand side variable format
-`right_delimeter` is the right-hand side variable format
-`substitutions` is an optional hash containing Perhaps something like: `{date: Time.now}`
-
+`format_key` is the key representing the string you'd like formatted, `left_delimeter` is the left-hand side variable match, `right_delimeter` is the right-hand side variable match and `substitutions` is an optional hash containing predefined global replacements, perhaps `{date: Time.now}`.
 
 ## Compatibility ##
 
-This gem was created for Ruby 2 and Rails 4. It's very possible it could work with older releases. You'll have to test to determine compatibility!
+This gem was created for Ruby 2. It's very likely it could work with older versions. You'll have to test to determine compatibility!
 
 ## License, etc ##
 
