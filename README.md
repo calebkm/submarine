@@ -29,7 +29,7 @@ This string can now be run through `Submarine` to turn `[[name]]` into something
 
 ```ruby
 greeting = "Good morning [[name]], welcome back to your dashboard!"
-formatted_greeting = Submarine.new(text: greeting, name: user.first_name).format!
+formatted_greeting = Submarine.new(text: greeting, name: user.name).format!
 => "Good morning Joe, welcome back to your dashboard!"
 ```
 
@@ -48,7 +48,7 @@ As shown above, `Submarine` takes a string and formats anything surrounded in do
 
 ```ruby
 email_body = "Hello [[name]]. You have [[days]] until your trial expires."
-sub = Submarine.new(text: email_body, days: user.account.days_until_expires)
+sub = Submarine.new(text: email_body, name: user.name, days: user.account.days_until_expires)
 sub.format! => "Hello Joe, you have 7 days until your trial expires."
 ```
 
