@@ -16,7 +16,7 @@ Not completely unlike [Handlebars](https://github.com/wycats/handlebars.js/) or 
 
 ## But why? ##
 
-When is `Submarine` useful? Let's say you have a Ruby web app with some admin editable text fields. The admin would like to display a custome welcome message in the user dashboard and include the users name in the message - as a way of personalizing the greeting. `Submarine` allows the admin to enter text with predefined formatters that will then magically convert when the user views the message.
+When is `Submarine` useful? Let's say you have a Ruby web app with some admin editable text fields. The admin has a particular text field that allows them to enter a welcome message that's displayed in a users dashboard. The admin would like to include the users name in the message, as a way of personalizing the greeting. `Submarine` allows the admin to enter text with predefined formatters that will then be magically converted when the user views the message.
 
 Maybe the text copy the admin enters via the web app interface looks like:
 
