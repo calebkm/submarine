@@ -73,7 +73,7 @@ end
 *config.substitutions*: You can predefine global substitution defaults in the configuration. Maybe you'd always like to match `[[contact_email]]` with `config.substitutions = {contact_email: 'contact@mysite.com'}`.
 
 #### Reloading Defaults ###
-If you'd like to reload the `Submarine` defaults at any point during runtime you can call `reload` on the configuration object:
+If you'd like to reload the `Submarine` defaults at any point during runtime you can call `reload!` on the configuration object:
 
 ```ruby
 Submarine.config.reload!
