@@ -70,7 +70,7 @@ end
 
 #### Default Substitutions ####
 
-*config.substitutions*: You can predefine global substitution defaults in the configuration. Maybe you'd always like to match `[[time]]` to the current time - `config.substitutions = {date: Time.now}`.
+*config.substitutions*: You can predefine global substitution defaults in the configuration. Maybe you'd always like to match `[[contact_email]]` with `config.substitutions = {contact_email: 'contact@mysite.com'}`.
 
 #### Reloading Defaults ###
 If you'd like to reload the `Submarine` defaults at any point during runtime you can call `reload` on the configuration object:
