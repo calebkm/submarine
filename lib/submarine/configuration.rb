@@ -1,7 +1,7 @@
 class Submarine::Configuration
 
   # Acceptable accessors.
-  attr_accessor :format_key, :left_delimeter, :right_delimeter, :substitutions
+  attr_accessor :format_key, :left_delimiter, :right_delimiter, :substitutions
 
   # Constructs a new Configuration instance.
   # Merges passed in options hash, sets instance variables.
@@ -17,8 +17,8 @@ class Submarine::Configuration
   def self.defaults
     {
       format_key:      :text, # The key representing the string to be formatted
-      left_delimeter:  '[[',  # The left-side matching string, ie: '[[name]]'
-      right_delimeter: ']]',  # The right-side matching string, ie: '[[name]]'
+      left_delimiter:  '[[',  # The left-side matching string, ie: '[[name]]'
+      right_delimiter: ']]',  # The right-side matching string, ie: '[[name]]'
       substitutions:   {}     # Optional global default substitutions 
     }
   end
@@ -35,8 +35,8 @@ private
   #
   def set_instance_variables options
     @format_key      = options[:format_key].to_sym
-    @left_delimeter  = options[:left_delimeter].to_s
-    @right_delimeter = options[:right_delimeter].to_s
+    @left_delimiter  = options[:left_delimiter].to_s
+    @right_delimiter = options[:right_delimiter].to_s
     @substitutions   = options[:substitutions]
   end
 

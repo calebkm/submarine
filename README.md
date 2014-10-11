@@ -62,8 +62,8 @@ sub.format! => "Hello Joe, you have 7 days until your trial expires."
 # maybe in an initialization file like config/initializers/submarine.rb
 Submarine.configure do |config|
   config.format_key = :text     # Key representing the string to be formatted
-  config.left_delimeter = '[['  # The left-hand side matcher
-  config.right_delimeter = ']]' # The right-hand side matcher
+  config.left_delimiter = '[['  # The left-hand side matcher
+  config.right_delimiter = ']]' # The right-hand side matcher
   config.substitutions = {}     # Optional global default substitutions 
 end
 ```

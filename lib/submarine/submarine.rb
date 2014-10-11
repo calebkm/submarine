@@ -41,7 +41,7 @@ class Submarine
     # 
     # Example:
     #   >> Submarine.config
-    #   => #<Submarine::Configuration @format_key=:text, @left_delimeter="[[", @right_delimeter="]]", @substitutions={}> 
+    #   => #<Submarine::Configuration @format_key=:text, @left_delimiter="[[", @right_delimiter="]]", @substitutions={}> 
     #
     def config
       @config ||= Configuration.new
@@ -55,13 +55,13 @@ class Submarine
     #  # config/initializers/submarine.rb  <-- if you're using Rails, say
     #  Submarine.configure do |config|
     #    config.format_key = :copy
-    #    config.left_delimeter = '<^'
-    #    config.right_delimeter = '^>'
+    #    config.left_delimiter = '<^'
+    #    config.right_delimiter = '^>'
     #    config.substitutions = {company: 'Submarine Inc, Co'}
     #  end
     #
     #  >> Submarine.config
-    #  => #<Submarine::Configuration @format_key=:copy, @left_delimeter="<^", @right_delimeter="^>", @substitutions={company: 'Submarine Inc, Co'}>
+    #  => #<Submarine::Configuration @format_key=:copy, @left_delimiter="<^", @right_delimiter="^>", @substitutions={company: 'Submarine Inc, Co'}>
     # 
     def configure
       yield config
@@ -101,7 +101,7 @@ private
   #   => "[[name]]"
   #
   def match key
-    "#{config.left_delimeter}#{key}#{config.right_delimeter}"
+    "#{config.left_delimiter}#{key}#{config.right_delimiter}"
   end
 
   # Returns the replacement for gsub with passed in key.
@@ -119,7 +119,7 @@ private
   # Example: 
   #   >> sub = Submarine.new(text: 'Hello, my name is [[name]].', name: 'Joe')
   #   >> sub.send(:config)
-  #   => #<Submarine::Configuration @format_key=:text, @left_delimeter="[[", @right_delimeter="]]", @substitutions={}>
+  #   => #<Submarine::Configuration @format_key=:text, @left_delimiter="[[", @right_delimiter="]]", @substitutions={}>
   #
   def config
     self.class.config
