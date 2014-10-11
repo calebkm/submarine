@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'submarine'
-  s.version     = '0.0.1'
-  s.date        = '2014-10-05'
+  s.version     = '1.0.0'
+  s.date        = '2014-10-11'
   s.summary     = 'Deep sea string substitution.'
   s.description = 'A lightweight string formatter.'
   s.authors     = ['Caleb K Matthiesen']
