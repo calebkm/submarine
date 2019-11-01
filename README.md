@@ -8,7 +8,7 @@ Deep sea string substitution. [Official Website](http://www.submarine-gem.org).
 
 ```ruby
 string = "Hello, my name is [[name]]."
-formatted_string = Submarine.new(text: string, name: 'Joe').format!
+Submarine.new(text: string, name: 'Joe').format!
 => "Hello, my name is Joe."
 ```
 
@@ -29,7 +29,7 @@ This string can now be run through `Submarine` to turn `[[name]]` into something
 
 ```ruby
 greeting = "Good morning [[name]], welcome back to your dashboard!"
-formatted_greeting = Submarine.new(text: greeting, name: user.name).format!
+Submarine.new(text: greeting, name: user.name).format!
 => "Good morning Joe, welcome back to your dashboard!"
 ```
 
@@ -56,10 +56,10 @@ sub.format! => "Hello Joe, you have 7 days until your trial expires."
 
 # Config #
 
-`Submarine` is configurable. Maybe you're not particularly fond of double square brackets and you'd prefer to have your variables surrounded with curly brackets, like `{{name}}`. Or maybe you prefer something more esoteric like `<^name^>`. Although `Submarine` defaults to square brackets, you're free to override them:
+`Submarine` is configurable. Maybe you're not particularly fond of double square brackets and you'd prefer to have your variables surrounded with curly brackets like `{{name}}`. Or maybe you prefer something more esoteric like `<^name^>`. Although `Submarine` defaults to square brackets, you're free to override them:
 
 ```ruby
-# maybe in an initialization file like config/initializers/submarine.rb
+# In an initialization file like config/initializers/submarine.rb
 Submarine.configure do |config|
   config.format_key = :text     # Key representing the string to be formatted
   config.left_delimiter = '[['  # The left-hand side matcher
