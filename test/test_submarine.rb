@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require 'submarine'
 
 class SubmarineTest < Minitest::Test
-
   def setup
     Submarine.config.reload! # Reload the configuration to defaults
 
@@ -84,6 +83,4 @@ class SubmarineTest < Minitest::Test
   def substitutions
     assert_equal @submarind.send(:substitutions), [:name, :company]
   end
-
-
 end

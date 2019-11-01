@@ -3,7 +3,7 @@ class Submarine
   # Constructs a new Submarine instance.
   # Set instance variable and readers based on input hash.
   #
-  def initialize *attrs
+  def initialize(*attrs)
     raise MissingAttributesError unless attrs_provided?(attrs)
     raise MissingFormatKeyError unless attrs_includes_format_key?(attrs)
 
@@ -31,7 +31,7 @@ class Submarine
   #   => "Hello, my name is Joe."
   #
   def format!
-    substitutions.each{|s| sub_string.gsub!(match(s), replace(s))}
+    substitutions.each { |s| sub_string.gsub!(match(s), replace(s)) }
     sub_string
   end
 
@@ -72,13 +72,13 @@ private
 
   # Were any attributes passed to Submarine.new?
   #
-  def attrs_provided? attrs
+  def attrs_provided?(attrs)
     !attrs.empty?
   end
 
   # Was the :format_key attribute passed to Submarine.new?
   #
-  def attrs_includes_format_key? attrs
+  def attrs_includes_format_key?(attrs)
     attrs.first.symbolize_keys.keys.include?(config.format_key.to_sym)
   end
 
@@ -100,7 +100,7 @@ private
   #   >> sub.send(:match, :name)
   #   => "[[name]]"
   #
-  def match key
+  def match(key)
     "#{config.left_delimiter}#{key}#{config.right_delimiter}"
   end
 
@@ -110,7 +110,7 @@ private
   #   >> sub = Submarine.new(text: 'Hello, my name is [[name]].', name: 'Joe')
   #   >> sub.send(:replace, :name)
   #   => "Joe"
-  def replace key
+  def replace(key)
     instance_variable_get("@#{key}").to_s
   end
 
@@ -135,7 +135,6 @@ private
   def substitutions
     subs = self.instance_variables
     subs.delete(config.format_key)
-    subs.map{|s| s.to_s.gsub('@', '').to_sym}
+    subs.map { |s| s.to_s.gsub('@', '').to_sym }
   end
-
 end

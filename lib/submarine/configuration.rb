@@ -6,7 +6,7 @@ class Submarine::Configuration
   # Constructs a new Configuration instance.
   # Merges passed in options hash, sets instance variables.
   #
-  def initialize *attrs
+  def initialize(*attrs)
     options = attrs.empty? ? {} : attrs.first
     options = self.class.defaults.merge(options)
     set_instance_variables options
@@ -33,11 +33,10 @@ private
 
   # Set the instance variables from passed in options hash.
   #
-  def set_instance_variables options
+  def set_instance_variables(options)
     @format_key      = options[:format_key].to_sym
     @left_delimiter  = options[:left_delimiter].to_s
     @right_delimiter = options[:right_delimiter].to_s
     @substitutions   = options[:substitutions]
   end
-
 end

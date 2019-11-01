@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require 'submarine'
 
 class Submarine::ConfigurationTest < Minitest::Test
-
   def setup
     @config = Submarine::Configuration.new
   end

@@ -1,5 +1,4 @@
 class Submarine
-
   # If no attributes are sent to Submarine.new, throw this.
   #
   class MissingAttributesError < StandardError
@@ -15,5 +14,4 @@ class Submarine
       super(message)
     end
   end
-
 end
